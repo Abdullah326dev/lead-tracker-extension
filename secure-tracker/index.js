@@ -2,7 +2,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/fireba
 import { getDatabase, 
         ref,
         push,
-        onValue  } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js"
+        onValue,
+        remove } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js"
 
 
 const firebaseConfig = {
@@ -45,16 +46,13 @@ function renderLeads(leads) {
 }
 
 function deletAll(){
-   
+   remove(referenceInDB)
+   ulEl.innerHTML = ""
 }
 
-function deletAllHandler(){
-    deletAll()
-    renderLeads()
-}
 
 // event lisiners
 
-deletBtn.addEventListener("dblclick", deletAllHandler)
+deletBtn.addEventListener("dblclick", deletAll)
 inputBtn.addEventListener("click", leadPusher)
 saveTab.addEventListener("click", SaveChormeTabs) 
