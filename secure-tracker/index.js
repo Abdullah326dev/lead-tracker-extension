@@ -48,6 +48,8 @@ function deletAll(){
    
 }
 
+
+
 function deletAllHandler(){
     deletAll()
     renderLeads()
